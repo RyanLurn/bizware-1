@@ -1,6 +1,12 @@
 {
   "name": "bizware-1",
   "type": "module",
+  "devDependencies": {
+    "oxfmt": "0.61.0",
+    "oxlint": "1.76.0",
+    "oxlint-tsgolint": "7.0.2001",
+    "turbo": "2.10.8"
+  },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
