@@ -265,7 +265,7 @@ importers:
 
   configs/typescript: {}
 
-  libs/db:
+  libs/db-schema:
     dependencies:
       drizzle-orm:
         specifier: 'catalog:'
