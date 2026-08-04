@@ -1,0 +1,11 @@
+{
+  "name": "bizware-1",
+  "type": "module",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.20.0",
+      "onFail": "warn"
+    }
+  }
+}
