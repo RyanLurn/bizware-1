@@ -1,9 +1,0 @@
-{
-  "extends": "@repo/typescript-config/src/node.json",
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["src/**/*", "tsdown.config.ts"]
-}
