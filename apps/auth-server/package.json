@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch ./src/serve.ts",
+    "dev": "portless",
+    "dev:serve": "tsx watch ./src/serve.ts",
     "try": "tsx --env-file-if-exists=.env ./src/try.ts"
   },
   "dependencies": {
@@ -18,8 +19,13 @@
     "@repo/tsdown-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "catalog:",
+    "portless": "catalog:",
     "tsdown": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:"
+  },
+  "portless": {
+    "name": "auth.bizware",
+    "script": "dev:serve"
   }
 }
