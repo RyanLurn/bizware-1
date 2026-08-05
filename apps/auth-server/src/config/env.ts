@@ -5,6 +5,8 @@ export const EnvSchema = z.object({
   ...DbEnvSchema.shape,
   BETTER_AUTH_SECRET: z.string().min(1),
   BETTER_AUTH_URL: z.url(),
+  PORT: z.coerce.number(),
+  HOST: z.hostname(),
 });
 
 export const env = EnvSchema.parse(process.env);

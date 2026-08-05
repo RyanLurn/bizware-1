@@ -1,14 +1,18 @@
 import { serve } from "@hono/node-server";
 
+import { env } from "@/config/env";
 import { app } from "@/index";
 
 const server = serve(
   {
     fetch: app.fetch,
-    port: 3000,
+    port: env.PORT,
+    hostname: env.HOST,
   },
   (info) => {
-    console.log(`Auth Server is running on http://localhost:${info.port}`);
+    console.log(
+      `Auth Server is running on http://${info.address}:${info.port}`,
+    );
   },
 );
 

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "portless",
-    "dev:serve": "tsx watch ./src/serve.ts",
+    "dev:serve": "tsx watch --env-file-if-exists=.env ./src/serve.ts",
     "try": "tsx --env-file-if-exists=.env ./src/try.ts"
   },
   "dependencies": {
