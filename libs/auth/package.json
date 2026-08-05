@@ -4,7 +4,6 @@
   "type": "module",
   "dependencies": {
     "@better-auth/drizzle-adapter": "1.7.0-rc.3",
-    "@neondatabase/serverless": "catalog:",
     "better-auth": "catalog:",
     "drizzle-orm": "catalog:"
   },
