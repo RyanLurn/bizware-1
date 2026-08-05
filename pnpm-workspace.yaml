@@ -10,6 +10,7 @@ packages:
   - tools/*
 
 catalog:
+  "@neondatabase/serverless": 1.1.0
   "@rolldown/plugin-babel": 0.2.3
   "@tailwindcss/vite": 4.3.3
   "@tanstack/react-router": 1.170.18
@@ -19,7 +20,7 @@ catalog:
   "@types/react-dom": 19.2.3
   "@vitejs/plugin-react": 6.0.5
   babel-plugin-react-compiler: 1.0.0
-  better-auth: 1.7.0-rc.2
+  better-auth: 1.7.0-rc.3
   drizzle-orm: 1.0.0-rc.4
   lucide-react: 1.28.0
   react: 19.2.8
