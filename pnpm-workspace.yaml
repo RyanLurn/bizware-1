@@ -6,6 +6,7 @@ packages:
   - libs/*
 
 catalog:
+  "@hono/node-server": 2.1.0
   "@rolldown/plugin-babel": 0.2.3
   "@tailwindcss/vite": 4.3.3
   "@tanstack/react-router": 1.170.18
@@ -17,6 +18,7 @@ catalog:
   babel-plugin-react-compiler: 1.0.0
   better-auth: 1.7.0-rc.3
   drizzle-orm: 1.0.0-rc.4
+  hono: 4.13.0
   lucide-react: 1.28.0
   react: 19.2.8
   react-dom: 19.2.8

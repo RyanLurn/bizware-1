@@ -205,6 +205,9 @@ settings:
 
 catalogs:
   default:
+    '@hono/node-server':
+      specifier: 2.1.0
+      version: 2.1.0
     '@rolldown/plugin-babel':
       specifier: 0.2.3
       version: 0.2.3
@@ -217,6 +220,9 @@ catalogs:
     drizzle-orm:
       specifier: 1.0.0-rc.4
       version: 1.0.0-rc.4
+    hono:
+      specifier: 4.13.0
+      version: 4.13.0
     tsdown:
       specifier: 0.22.14
       version: 0.22.14
@@ -246,6 +252,40 @@ importers:
       turbo:
         specifier: 2.10.8
         version: 2.10.8
+
+  apps/auth-server:
+    dependencies:
+      '@hono/node-server':
+        specifier: 'catalog:'
+        version: 2.1.0(hono@4.13.0)
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../libs/db
+      hono:
+        specifier: 'catalog:'
+        version: 4.13.0
+      zod:
+        specifier: 'catalog:'
+        version: 4.4.3
+    devDependencies:
+      '@repo/tsdown-config':
+        specifier: workspace:*
+        version: link:../../configs/tsdown
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../configs/typescript
+      '@types/node':
+        specifier: 'catalog:'
+        version: 26.1.2
+      tsdown:
+        specifier: 'catalog:'
+        version: 0.22.14(tsx@4.23.1)(typescript@7.0.2)
+      tsx:
+        specifier: 'catalog:'
+        version: 4.23.1
+      typescript:
+        specifier: 'catalog:'
+        version: 7.0.2
 
   configs/tsdown:
     dependencies:
@@ -687,6 +727,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@hono/node-server@2.1.0':
+    resolution: {integrity: sha512-XovyyCCnBzW+zKu+z/zq8hwNs4KOR5rEMAOxo2f40Q5xoOI37IMm6MIg2COOUtUApo0i6850MTBKH2u4QLGIqg==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      hono: ^4
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1656,6 +1702,10 @@ packages:
     resolution: {integrity: sha512-/6gFNr0N04nob252sTQxyFLi3eKFRqIg1I87YcqAMT1i6SQrSF6KujUEQrtrjMV0H/eejTCltLdDSTEMzHbnsQ==}
     engines: {node: '>=20.20.0'}
 
+  hono@4.13.0:
+    resolution: {integrity: sha512-jhunvfHWxd7J5EFfSgH4xsYJzSe/lfqbUCxiyyeaQasUsXeEHXtzVid+7EOGByc5JnFa23SSFL3Y2RV/z1T+eQ==}
+    engines: {node: '>=16.9.0'}
+
   hookable@6.1.1:
     resolution: {integrity: sha512-U9LYDy1CwhMCnprUfeAZWZGByVbhd54hwepegYTK7Pi5NvqEj63ifz5z+xukznehT7i6NIZRu89Ay1AZmRsLEQ==}
 
@@ -2252,6 +2302,10 @@ snapshots:
   '@esbuild/win32-x64@0.28.1':
     optional: true
 
+  '@hono/node-server@2.1.0(hono@4.13.0)':
+    dependencies:
+      hono: 4.13.0
+
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -2765,6 +2819,8 @@ snapshots:
   get-tsconfig@5.0.0-beta.5:
     dependencies:
       resolve-pkg-maps: 1.0.0
+
+  hono@4.13.0: {}
 
   hookable@6.1.1: {}
 

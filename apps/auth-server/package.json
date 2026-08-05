@@ -1,0 +1,22 @@
+{
+  "name": "@repo/auth-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "try": "tsx --env-file-if-exists=.env ./src/try.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "catalog:",
+    "@repo/db": "workspace:*",
+    "hono": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@repo/tsdown-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "tsdown": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  }
+}
