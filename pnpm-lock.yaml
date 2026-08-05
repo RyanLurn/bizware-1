@@ -308,7 +308,7 @@ importers:
   libs/db-schema:
     dependencies:
       drizzle-orm:
-        specifier: 'catalog:'
+        specifier: 1.0.0-rc.4
         version: 1.0.0-rc.4(@neondatabase/serverless@1.1.0)(zod@4.4.3)
     devDependencies:
       '@repo/tsdown-config':

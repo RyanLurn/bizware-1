@@ -2,8 +2,12 @@
   "name": "@repo/db-schema",
   "private": true,
   "type": "module",
+  "scripts": {
+    "generate": "pnpm dlx drizzle-kit generate",
+    "migrate": "pnpm dlx drizzle-kit migrate"
+  },
   "dependencies": {
-    "drizzle-orm": "catalog:"
+    "drizzle-orm": "1.0.0-rc.4"
   },
   "devDependencies": {
     "@repo/tsdown-config": "workspace:*",
