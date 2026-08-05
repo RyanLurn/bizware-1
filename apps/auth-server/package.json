@@ -3,11 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "tsx watch ./src/serve.ts",
     "try": "tsx --env-file-if-exists=.env ./src/try.ts"
   },
   "dependencies": {
+    "@better-auth/drizzle-adapter": "catalog:",
     "@hono/node-server": "catalog:",
     "@repo/db": "workspace:*",
+    "better-auth": "catalog:",
     "hono": "catalog:",
     "zod": "catalog:"
   },

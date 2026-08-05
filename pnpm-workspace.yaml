@@ -6,6 +6,7 @@ packages:
   - libs/*
 
 catalog:
+  "@better-auth/drizzle-adapter": 1.7.0-rc.3
   "@hono/node-server": 2.1.0
   "@rolldown/plugin-babel": 0.2.3
   "@tailwindcss/vite": 4.3.3
