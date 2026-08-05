@@ -1,7 +1,7 @@
 import { boolean, pgTable, text, uuid } from "drizzle-orm/pg-core";
 
-import { id } from "@/helpers/id";
-import { timestamps } from "@/helpers/timestamps";
+import { id } from "@/schema/helpers/id";
+import { timestamps } from "@/schema/helpers/timestamps";
 
 export const userTable = pgTable("users", {
   id,

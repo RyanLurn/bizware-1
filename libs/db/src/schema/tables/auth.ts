@@ -6,9 +6,9 @@ import {
   uniqueIndex,
 } from "drizzle-orm/pg-core";
 
-import { id } from "@/helpers/id";
-import { timestampConfig, timestamps } from "@/helpers/timestamps";
-import { userId } from "@/tables/user";
+import { id } from "@/schema/helpers/id";
+import { timestampConfig, timestamps } from "@/schema/helpers/timestamps";
+import { userId } from "@/schema/tables/user";
 
 export const sessionTable = pgTable(
   "sessions",

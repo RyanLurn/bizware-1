@@ -308,7 +308,7 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2
 
-  libs/db-schema:
+  libs/db:
     dependencies:
       drizzle-orm:
         specifier: 'catalog:'

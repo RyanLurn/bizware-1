@@ -1,7 +1,11 @@
 import { defineRelations } from "drizzle-orm";
 
-import { accountTable, sessionTable, verificationTable } from "@/tables/auth";
-import { userTable } from "@/tables/user";
+import {
+  accountTable,
+  sessionTable,
+  verificationTable,
+} from "@/schema/tables/auth";
+import { userTable } from "@/schema/tables/user";
 
 export const relations = defineRelations(
   {

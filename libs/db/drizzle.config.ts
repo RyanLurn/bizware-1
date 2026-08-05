@@ -4,7 +4,7 @@ process.loadEnvFile();
 
 export default defineConfig({
   out: "./migrations",
-  schema: "./src/tables",
+  schema: "./src/schema/tables",
   dialect: "postgresql",
   dbCredentials: {
     url: process.env.NEON_DIRECT_CONNECTION_STRING!,
