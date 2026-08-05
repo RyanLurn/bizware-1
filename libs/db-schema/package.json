@@ -3,11 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "pnpm dlx drizzle-kit generate",
-    "migrate": "pnpm dlx drizzle-kit migrate"
+    "try": "tsx --env-file-if-exists=.env ./src/try.ts",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
   },
   "dependencies": {
-    "drizzle-orm": "1.0.0-rc.4"
+    "drizzle-orm": "catalog:"
   },
   "devDependencies": {
     "@repo/tsdown-config": "workspace:*",
@@ -15,6 +16,7 @@
     "@types/node": "catalog:",
     "drizzle-kit": "1.0.0-rc.4",
     "tsdown": "catalog:",
+    "tsx": "catalog:",
     "typescript": "catalog:"
   }
 }

@@ -1,7 +1,5 @@
 savePrefix: ""
 
-enableGlobalVirtualStore: true
-
 packages:
   - apps/*
   - configs/*
@@ -41,3 +39,7 @@ allowBuilds:
 
 minimumReleaseAge: 1440
 minimumReleaseAgeStrict: true
+
+hoistPattern:
+  - "@neondatabase/serverless"
+  - "*drizzle-*"
