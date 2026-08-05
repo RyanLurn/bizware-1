@@ -14,3 +14,7 @@ export const DbEnvSchema = z.object({
     z.string().min(1),
   ]),
 });
+
+export type NeonPooledConnectionString = z.infer<
+  typeof DbEnvSchema
+>["NEON_POOLED_CONNECTION_STRING"];
