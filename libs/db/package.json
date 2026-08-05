@@ -2,7 +2,18 @@
   "name": "@repo/db",
   "private": true,
   "type": "module",
+  "exports": {
+    "./create": "./dist/create.mjs",
+    "./env": "./dist/env.mjs",
+    "./schema/helpers/id": "./dist/schema/helpers/id.mjs",
+    "./schema/helpers/timestamps": "./dist/schema/helpers/timestamps.mjs",
+    "./schema/relations": "./dist/schema/relations.mjs",
+    "./schema/tables/auth": "./dist/schema/tables/auth.mjs",
+    "./schema/tables/user": "./dist/schema/tables/user.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
+    "build": "tsdown",
     "try": "tsx --env-file-if-exists=.env ./src/try.ts",
     "generate": "drizzle-kit generate",
     "migrate": "drizzle-kit migrate"
