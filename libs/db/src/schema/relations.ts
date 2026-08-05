@@ -33,7 +33,7 @@ export const relations = defineRelations(
     },
     accountTable: {
       user: one.userTable({
-        from: sessionTable.userId,
+        from: accountTable.userId,
         to: userTable.id,
       }),
     },
