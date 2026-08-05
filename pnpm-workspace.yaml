@@ -4,8 +4,6 @@ packages:
   - apps/*
   - configs/*
   - libs/*
-  - schemas/*
-  - tools/*
 
 catalog:
   "@rolldown/plugin-babel": 0.2.3
