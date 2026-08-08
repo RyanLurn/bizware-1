@@ -46,3 +46,11 @@ minimumReleaseAgeStrict: true
 hoistPattern:
   - "@neondatabase/serverless"
   - "*drizzle-*"
+
+packageExtensions:
+  "@tanstack/react-form":
+    peerDependencies:
+      "@types/react": "*"
+    peerDependenciesMeta:
+      "@types/react":
+        optional: true

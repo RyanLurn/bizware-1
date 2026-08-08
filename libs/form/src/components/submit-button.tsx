@@ -29,15 +29,7 @@ export function SubmitButton({
         isSubmitting: state.isSubmitting,
       })}
     >
-      {({
-        isPristine,
-        canSubmit,
-        isSubmitting,
-      }: {
-        isPristine: boolean;
-        canSubmit: boolean;
-        isSubmitting: boolean;
-      }) => (
+      {({ isPristine, canSubmit, isSubmitting }) => (
         <Button
           disabled={isPristine || !canSubmit || isSubmitting}
           form={formContext.formId}
