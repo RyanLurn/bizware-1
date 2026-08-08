@@ -2,6 +2,15 @@
   "name": "@repo/form",
   "private": true,
   "type": "module",
+  "exports": {
+    "./components/check-field": "./dist/components/check-field.js",
+    "./components/field": "./dist/components/field.js",
+    "./components/submit-button": "./dist/components/submit-button.js",
+    "./components/text-field": "./dist/components/text-field.js",
+    "./contexts": "./dist/contexts.js",
+    "./hooks": "./dist/hooks.js",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsdown"
   },
