@@ -1,0 +1,200 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+@import "./typeset.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter Variable", sans-serif;
+  --font-serif: "Fraunces Variable", serif;
+  --font-mono: "JetBrains Mono Variable", monospace;
+  --font-heading: var(--font-serif);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  /* Custom addition beyond the default shadcn token set — see "Adding New
+  Tokens" in the theming docs. Used for the amber/warning language across
+  Atlas: starred items, trial-status pills, external badges, search-match
+  highlights. */
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Named font faces, referenced directly by the typeset presets below. */
+  --font-inter: "Inter Variable", sans-serif;
+  --font-fraunces: "Fraunces Variable", serif;
+  --font-jetbrains-mono: "JetBrains Mono Variable", monospace;
+
+  --radius: 0.75rem;
+
+  /* Warm cream paper, not stark white — calmer to look at for long sessions. */
+  --background: oklch(0.941 0.0115 84.579);
+  --foreground: oklch(0.2305 0.0041 264.487);
+  --card: oklch(0.9678 0.0086 84.573);
+  --card-foreground: oklch(0.2305 0.0041 264.487);
+  --popover: oklch(0.9823 0.0069 88.642);
+  --popover-foreground: oklch(0.2305 0.0041 264.487);
+  --primary: oklch(0.5349 0.0801 147.525);
+  --primary-foreground: oklch(0.9823 0.0069 88.642);
+  --secondary: oklch(0.2305 0.0041 264.487);
+  --secondary-foreground: oklch(0.9823 0.0069 88.642);
+  --muted: oklch(0.9104 0.017 88.004);
+  --muted-foreground: oklch(0.6563 0.0105 93.628);
+  --accent: oklch(0.9277 0.0154 145.45);
+  --accent-foreground: oklch(0.5349 0.0801 147.525);
+  --destructive: oklch(0.5753 0.1517 31.526);
+  --destructive-foreground: oklch(0.9823 0.0069 88.642);
+  --border: oklch(0.8823 0.0155 90.247);
+  --input: oklch(0.8202 0.0213 91.616);
+  --ring: oklch(0.5349 0.0801 147.525);
+  --warning: oklch(0.7073 0.1231 79.619);
+  --warning-foreground: oklch(0.2305 0.0041 264.487);
+  --chart-1: oklch(0.5349 0.0801 147.525);
+  --chart-2: oklch(0.7073 0.1231 79.619);
+  --chart-3: oklch(0.4899 0.1153 279.462);
+  --chart-4: oklch(0.5753 0.1517 31.526);
+  --chart-5: oklch(0.6563 0.0105 93.628);
+  --sidebar: oklch(0.9198 0.0157 86.428);
+  --sidebar-foreground: oklch(0.2305 0.0041 264.487);
+  --sidebar-primary: oklch(0.5349 0.0801 147.525);
+  --sidebar-primary-foreground: oklch(0.9823 0.0069 88.642);
+  --sidebar-accent: oklch(0.9277 0.0154 145.45);
+  --sidebar-accent-foreground: oklch(0.5349 0.0801 147.525);
+  --sidebar-border: oklch(0.8823 0.0155 90.247);
+  --sidebar-ring: oklch(0.5349 0.0801 147.525);
+}
+
+.dark {
+  /* Warm charcoal, not pure black — same "chill" character as the light
+  theme, just inverted. Green stays the brand color rather than flipping
+  to plain white, so the two modes still read as the same product. */
+  --background: oklch(0.2138 0.0042 84.589);
+  --foreground: oklch(0.9372 0.0112 89.725);
+  --card: oklch(0.24 0.008 84.591);
+  --card-foreground: oklch(0.9372 0.0112 89.725);
+  --popover: oklch(0.261 0.0079 84.593);
+  --popover-foreground: oklch(0.9372 0.0112 89.725);
+  --primary: oklch(0.6667 0.0852 148.52);
+  --primary-foreground: oklch(0.2299 0.0206 162.517);
+  --secondary: oklch(0.9372 0.0112 89.725);
+  --secondary-foreground: oklch(0.2138 0.0042 84.589);
+  --muted: oklch(0.2607 0.0096 88.777);
+  --muted-foreground: oklch(0.6799 0.0165 90.288);
+  --accent: oklch(0.2703 0.0247 149.483);
+  --accent-foreground: oklch(0.7474 0.0769 148.152);
+  --destructive: oklch(0.6579 0.1555 33.274);
+  --destructive-foreground: oklch(0.24 0.008 84.591);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.6667 0.0852 148.52);
+  --warning: oklch(0.7763 0.1207 81.551);
+  --warning-foreground: oklch(0.24 0.008 84.591);
+  --chart-1: oklch(0.6667 0.0852 148.52);
+  --chart-2: oklch(0.7763 0.1207 81.551);
+  --chart-3: oklch(0.6661 0.0843 281.515);
+  --chart-4: oklch(0.6579 0.1555 33.274);
+  --chart-5: oklch(0.6799 0.0165 90.288);
+  --sidebar: oklch(0.2264 0.0059 91.616);
+  --sidebar-foreground: oklch(0.9372 0.0112 89.725);
+  --sidebar-primary: oklch(0.6667 0.0852 148.52);
+  --sidebar-primary-foreground: oklch(0.2299 0.0206 162.517);
+  --sidebar-accent: oklch(0.2703 0.0247 149.483);
+  --sidebar-accent-foreground: oklch(0.7474 0.0769 148.152);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.6667 0.0852 148.52);
+}
+
+/* ------------------------------------------------------------------ */
+/* Typeset presets — one per reading context. See shadcn/typeset docs. */
+/* ------------------------------------------------------------------ */
+
+/* Chat bubbles: plain throughout, no serif flourish, pinned to a real
+pixel size so it stays legible regardless of the bubble's container. */
+.typeset-chat {
+  --typeset-font-body: var(--font-inter);
+  --typeset-font-heading: var(--font-inter);
+  --typeset-font-mono: var(--font-jetbrains-mono);
+  --typeset-size: 16px;
+  --typeset-leading: 1.75;
+  --typeset-flow: 1.25em;
+}
+
+/* Docs / the block editor and its viewers: Fraunces headings over Inter
+body copy, roomy flow between blocks to match the big, breathable list
+and card spacing used everywhere else in Atlas. */
+.typeset-docs {
+  --typeset-font-body: var(--font-inter);
+  --typeset-font-heading: var(--font-fraunces);
+  --typeset-font-mono: var(--font-jetbrains-mono);
+  --typeset-size: 16px;
+  --typeset-leading: 1.75;
+  --typeset-flow: 1.5em;
+}
+
+/* Mail thread bodies: same pairing as Docs, slightly tighter flow — a
+formal email should still read a touch more compact than a long doc. */
+.typeset-mail {
+  --typeset-font-body: var(--font-inter);
+  --typeset-font-heading: var(--font-fraunces);
+  --typeset-font-mono: var(--font-jetbrains-mono);
+  --typeset-size: 16px;
+  --typeset-leading: 1.75;
+  --typeset-flow: 1.35em;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
