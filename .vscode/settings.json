@@ -30,5 +30,6 @@
     "twMerge",
     "cva"
   ],
-  "tailwindCSS.lint.suggestCanonicalClasses": "ignore"
+  "tailwindCSS.lint.suggestCanonicalClasses": "ignore",
+  "js/ts.experimental.useTsgo": true
 }
