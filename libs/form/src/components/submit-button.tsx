@@ -1,3 +1,4 @@
+import type { OmitKnownKeys } from "@repo/types";
 import type { ComponentProps } from "react";
 
 import { Button } from "@repo/ui/components/button";
@@ -5,7 +6,7 @@ import { Spinner } from "@repo/ui/components/spinner";
 
 import { useFormContext } from "@/contexts";
 
-interface SubmitButtonProps extends Omit<
+interface SubmitButtonProps extends OmitKnownKeys<
   ComponentProps<typeof Button>,
   "disabled" | "form" | "type"
 > {

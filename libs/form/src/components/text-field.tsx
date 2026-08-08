@@ -1,3 +1,4 @@
+import type { OmitKnownKeys } from "@repo/types";
 import type { ComponentProps } from "react";
 
 import { Input } from "@repo/ui/components/input";
@@ -5,7 +6,7 @@ import { Input } from "@repo/ui/components/input";
 import { Field, FieldError, FieldLabel } from "@/components/field";
 import { useFieldContext } from "@/contexts";
 
-interface TextFieldProps extends Omit<
+interface TextFieldProps extends OmitKnownKeys<
   ComponentProps<typeof Input>,
   "aria-invalid" | "onChange" | "onBlur" | "value" | "name" | "id"
 > {

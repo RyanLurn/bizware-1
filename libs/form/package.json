@@ -6,6 +6,7 @@
     "build": "tsdown"
   },
   "dependencies": {
+    "@repo/types": "workspace:*",
     "@repo/ui": "workspace:*",
     "@tanstack/react-form": "1.33.3",
     "class-variance-authority": "catalog:",
