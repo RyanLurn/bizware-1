@@ -2,7 +2,24 @@
   "name": "@repo/ui",
   "private": true,
   "type": "module",
+  "exports": {
+    "./components/avatar": "./dist/components/avatar.js",
+    "./components/button": "./dist/components/button.js",
+    "./components/card": "./dist/components/card.js",
+    "./components/dropdown-menu": "./dist/components/dropdown-menu.js",
+    "./components/input": "./dist/components/input.js",
+    "./components/label": "./dist/components/label.js",
+    "./components/separator": "./dist/components/separator.js",
+    "./components/spinner": "./dist/components/spinner.js",
+    "./components/textarea": "./dist/components/textarea.js",
+    "./components/toast": "./dist/components/toast.js",
+    "./lib/cn": "./dist/lib/cn.js",
+    "./package.json": "./package.json",
+    "./styles.css": "./src/styles/index.css",
+    "./typeset.css": "./src/styles/typeset.css"
+  },
   "scripts": {
+    "build": "tsdown",
     "shadcn:add": "pnpm dlx shadcn add"
   },
   "dependencies": {
