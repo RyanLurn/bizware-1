@@ -6,6 +6,7 @@
     "./components/avatar": "./dist/components/avatar.js",
     "./components/button": "./dist/components/button.js",
     "./components/card": "./dist/components/card.js",
+    "./components/checkbox": "./dist/components/checkbox.js",
     "./components/dropdown-menu": "./dist/components/dropdown-menu.js",
     "./components/input": "./dist/components/input.js",
     "./components/label": "./dist/components/label.js",
