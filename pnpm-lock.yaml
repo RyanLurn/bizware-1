@@ -214,6 +214,9 @@ catalogs:
     '@tailwindcss/vite':
       specifier: 4.3.3
       version: 4.3.3
+    '@tanstack/react-router':
+      specifier: 1.170.22
+      version: 1.170.22
     '@tanstack/react-start':
       specifier: 1.168.39
       version: 1.168.39
@@ -223,6 +226,9 @@ catalogs:
     '@types/react':
       specifier: 19.2.18
       version: 19.2.18
+    '@types/react-dom':
+      specifier: 19.2.4
+      version: 19.2.4
     '@vitejs/plugin-react':
       specifier: 6.0.5
       version: 6.0.5
@@ -241,7 +247,13 @@ catalogs:
     lucide-react:
       specifier: 1.29.0
       version: 1.29.0
+    portless:
+      specifier: 0.15.5
+      version: 0.15.5
     react:
+      specifier: 19.2.8
+      version: 19.2.8
+    react-dom:
       specifier: 19.2.8
       version: 19.2.8
     tailwindcss:
@@ -281,6 +293,64 @@ importers:
       turbo:
         specifier: 2.10.8
         version: 2.10.8
+
+  apps/user-web:
+    dependencies:
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../libs/db
+      '@repo/env':
+        specifier: workspace:*
+        version: link:../../libs/env
+      '@repo/ui':
+        specifier: workspace:*
+        version: link:../../libs/ui
+      '@tanstack/react-router':
+        specifier: 'catalog:'
+        version: 1.170.22(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@tanstack/react-start':
+        specifier: 'catalog:'
+        version: 1.168.39(esbuild@0.28.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rolldown@1.2.3)(vite@8.2.1(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1))
+      lucide-react:
+        specifier: 'catalog:'
+        version: 1.29.0(react@19.2.8)
+      react:
+        specifier: 'catalog:'
+        version: 19.2.8
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.2.8(react@19.2.8)
+      tailwindcss:
+        specifier: 'catalog:'
+        version: 4.3.3
+    devDependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../../configs/typescript
+      '@repo/vite-config':
+        specifier: workspace:*
+        version: link:../../configs/vite
+      '@types/node':
+        specifier: 'catalog:'
+        version: 26.1.2
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.2.18
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 19.2.4(@types/react@19.2.18)
+      babel-plugin-react-compiler:
+        specifier: 'catalog:'
+        version: 1.0.0
+      portless:
+        specifier: 'catalog:'
+        version: 0.15.5
+      typescript:
+        specifier: 'catalog:'
+        version: 7.0.2
+      vite:
+        specifier: 'catalog:'
+        version: 8.2.1(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1)
 
   configs/tsdown:
     dependencies:
@@ -1951,6 +2021,11 @@ packages:
   '@types/node@26.1.2':
     resolution: {integrity: sha512-Vu4a5UFA9rIIFJ7rB/Vaafh9lrCQszopTCx6KjFboXTGQbPNasehVR5TEiithSDGyd1DEiUByggTZsg8jukeIg==}
 
+  '@types/react-dom@19.2.4':
+    resolution: {integrity: sha512-Bsc+QHgp+P/F02XDzNCY9jnZNCUuLki36KT7VKrTXXLdHf+vHMNZnW1rVu5DNW/rCK+fya3DATySbLM4yhtKUw==}
+    peerDependencies:
+      '@types/react': ^19.2.0
+
   '@types/react@19.2.18':
     resolution: {integrity: sha512-AnzbBERsrLKtk2XSfTbYRLjQPdy116Sty4q+T+Bp3IC4l6jNBvreVPAHmpq9qhXQM7CXZPjLVmGMw9sy+hxQ3w==}
 
@@ -3527,6 +3602,12 @@ packages:
   pkg-up@3.1.0:
     resolution: {integrity: sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==}
     engines: {node: '>=8'}
+
+  portless@0.15.5:
+    resolution: {integrity: sha512-zmJu4Q8/fY54oVUT/5NnmF4Ih8wTdCvCf6JCN783dRYl9mXkJBzXSckX2lztGCLIbM70varDjCudAbGKT73XPg==}
+    engines: {node: '>=24'}
+    os: [darwin, linux, win32]
+    hasBin: true
 
   postcss-selector-parser@7.1.5:
     resolution: {integrity: sha512-KvvtD7SrlBP7dlgkBghEE3r84CABm5SmV2aNcG4oCA+qDnJ/tvKonFVvwWAyyWUEwxuNawdfEAZKP9zM3oZ2Uw==}
@@ -5189,6 +5270,10 @@ snapshots:
     dependencies:
       undici-types: 8.3.0
 
+  '@types/react-dom@19.2.4(@types/react@19.2.18)':
+    dependencies:
+      '@types/react': 19.2.18
+
   '@types/react@19.2.18':
     dependencies:
       csstype: 3.2.3
@@ -6362,6 +6447,8 @@ snapshots:
   pkg-up@3.1.0:
     dependencies:
       find-up: 3.0.0
+
+  portless@0.15.5: {}
 
   postcss-selector-parser@7.1.5:
     dependencies:
