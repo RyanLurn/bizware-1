@@ -8,6 +8,7 @@
     "./components/card": "./dist/components/card.js",
     "./components/checkbox": "./dist/components/checkbox.js",
     "./components/dropdown-menu": "./dist/components/dropdown-menu.js",
+    "./components/field": "./dist/components/field.js",
     "./components/input": "./dist/components/input.js",
     "./components/label": "./dist/components/label.js",
     "./components/separator": "./dist/components/separator.js",
