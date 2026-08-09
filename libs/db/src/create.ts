@@ -10,3 +10,5 @@ export function createDb(connectionString: NeonPooledConnectionString) {
   const db = drizzle({ client, relations });
   return db;
 }
+
+export type Db = ReturnType<typeof createDb>;
