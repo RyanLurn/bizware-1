@@ -1,0 +1,1 @@
+export const CURRENT_AUTH_SECRET_VERSION = "1";

@@ -9,7 +9,8 @@
     "@better-auth/drizzle-adapter": "catalog:",
     "@repo/auth-core": "workspace:*",
     "@repo/db": "workspace:*",
-    "better-auth": "catalog:"
+    "better-auth": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@repo/tsdown-config": "workspace:*",
