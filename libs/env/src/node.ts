@@ -1,5 +1,7 @@
 import { z } from "zod";
 
-export const NodeEnv = z.object({
+export const NodeEnvSchema = z.object({
   NODE_ENV: z.enum(["development", "testing", "staging", "production"]),
 });
+
+export type NodeEnv = z.infer<typeof NodeEnvSchema>["NODE_ENV"];
