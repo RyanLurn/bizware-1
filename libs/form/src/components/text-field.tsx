@@ -1,9 +1,9 @@
 import type { OmitKnownKeys } from "@repo/types";
 import type { ComponentProps } from "react";
 
+import { Field, FieldError, FieldLabel } from "@repo/ui/components/field";
 import { Input } from "@repo/ui/components/input";
 
-import { Field, FieldError, FieldLabel } from "@/components/field";
 import { useFieldContext } from "@/contexts";
 
 interface TextFieldProps extends OmitKnownKeys<

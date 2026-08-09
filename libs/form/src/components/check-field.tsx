@@ -2,8 +2,8 @@ import type { OmitKnownKeys } from "@repo/types";
 import type { ComponentProps } from "react";
 
 import { Checkbox } from "@repo/ui/components/checkbox";
+import { Field, FieldLabel } from "@repo/ui/components/field";
 
-import { Field, FieldLabel } from "@/components/field";
 import { useFieldContext } from "@/contexts";
 
 interface CheckFieldProps extends OmitKnownKeys<
