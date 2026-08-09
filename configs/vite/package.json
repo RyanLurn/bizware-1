@@ -10,6 +10,7 @@
     "build": "tsdown"
   },
   "dependencies": {
+    "@repo/env": "workspace:*",
     "@rolldown/plugin-babel": "catalog:",
     "@tailwindcss/vite": "catalog:",
     "@tanstack/react-start": "catalog:",
