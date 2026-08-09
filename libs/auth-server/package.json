@@ -2,6 +2,12 @@
   "name": "@repo/auth-server",
   "private": true,
   "type": "module",
+  "exports": {
+    "./constants": "./dist/constants.mjs",
+    "./create": "./dist/create.mjs",
+    "./env": "./dist/env.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsdown"
   },
