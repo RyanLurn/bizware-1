@@ -1,11 +1,11 @@
 import { z } from "zod";
 
-import { DEFAULT_BASE_AUTH_PATH } from "@/constants";
+import { DEFAULT_AUTH_BASE_PATH } from "@/constants";
 
-export const BaseAuthUrlSchema = z.url();
-export type BaseAuthUrl = z.infer<typeof BaseAuthUrlSchema>;
+export const AuthBaseUrlSchema = z.url();
+export type AuthBaseUrl = z.infer<typeof AuthBaseUrlSchema>;
 
-export const BaseAuthPathSchema = z
+export const AuthBasePathSchema = z
   .templateLiteral(["/", z.string()])
-  .default(DEFAULT_BASE_AUTH_PATH);
-export type BaseAuthPath = z.infer<typeof BaseAuthPathSchema>;
+  .default(DEFAULT_AUTH_BASE_PATH);
+export type AuthBasePath = z.infer<typeof AuthBasePathSchema>;
