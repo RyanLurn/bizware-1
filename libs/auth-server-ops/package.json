@@ -2,6 +2,11 @@
   "name": "@repo/auth-server-ops",
   "private": true,
   "type": "module",
+  "exports": {
+    "./errors/unauthenticated": "./dist/errors/unauthenticated.mjs",
+    "./get-user": "./dist/get-user.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsdown"
   },
