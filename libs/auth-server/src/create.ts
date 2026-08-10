@@ -14,23 +14,24 @@ import {
 } from "@repo/db/schema/tables/auth";
 import { userTable } from "@repo/db/schema/tables/user";
 import { betterAuth } from "better-auth/minimal";
+import { tanstackStartCookies } from "better-auth/tanstack-start";
 
 import type { AuthSecrets } from "@/env";
 
-export function createAuthServer({
-  db,
-  baseURL,
-  basePath,
-  secrets,
-  plugins,
-}: {
+interface AuthServerParams {
   db: Db;
   baseURL: AuthBaseUrl;
   basePath: AuthBasePath;
   secrets: AuthSecrets;
-  plugins?: BetterAuthOptions["plugins"];
-}) {
-  return betterAuth({
+}
+
+function createSharedOptions({
+  db,
+  baseURL,
+  basePath,
+  secrets,
+}: AuthServerParams) {
+  return {
     baseURL,
     basePath,
     secrets,
@@ -54,6 +55,41 @@ export function createAuthServer({
       minPasswordLength: MIN_PASSWORD_LENGTH,
       maxPasswordLength: MAX_PASSWORD_LENGTH,
     },
-    plugins,
+  } satisfies BetterAuthOptions;
+}
+
+export function createAuthServer({
+  db,
+  baseURL,
+  basePath,
+  secrets,
+}: AuthServerParams) {
+  return betterAuth(
+    createSharedOptions({
+      db,
+      baseURL,
+      basePath,
+      secrets,
+    }),
+  );
+}
+
+export function createAppAuthServer({
+  db,
+  baseURL,
+  basePath,
+  secrets,
+}: AuthServerParams) {
+  const sharedOptions = createSharedOptions({
+    db,
+    baseURL,
+    basePath,
+    secrets,
+  });
+
+  return betterAuth({
+    ...sharedOptions,
+    // Better Auth docs specifies that the tanstackStartCookies plugin must come last in the array.
+    plugins: [tanstackStartCookies()],
   });
 }
