@@ -6,6 +6,7 @@
     "build": "tsdown"
   },
   "dependencies": {
+    "@repo/auth-core": "workspace:*",
     "better-auth": "catalog:",
     "zod": "catalog:"
   },
