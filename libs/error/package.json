@@ -5,6 +5,9 @@
   "scripts": {
     "build": "tsdown"
   },
+  "dependencies": {
+    "serialize-error": "13.0.1"
+  },
   "devDependencies": {
     "@repo/tsdown-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
