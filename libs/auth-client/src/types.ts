@@ -6,9 +6,9 @@ export type AuthClient = ReturnType<typeof createAuthClient>;
 
 export type AuthClientErrorCode = keyof AuthClient["$ERROR_CODES"];
 
-export interface AuthClientError extends Pick<
+export interface AuthClientError<Code extends AuthClientErrorCode> extends Pick<
   BetterFetchError,
   "message" | "status" | "statusText"
 > {
-  code: AuthClientErrorCode;
+  code: Code;
 }
