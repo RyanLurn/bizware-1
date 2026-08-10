@@ -2,7 +2,10 @@ import type { AuthClientError } from "@repo/auth-client/types";
 
 import { BaseError } from "@repo/error/classes/base";
 
-import { PASSWORD_TOO_SHORT_ERROR_MESSAGE } from "@/constants";
+import {
+  PASSWORD_TOO_LONG_ERROR_MESSAGE,
+  PASSWORD_TOO_SHORT_ERROR_MESSAGE,
+} from "@/constants";
 
 export class PasswordTooShortError extends BaseError<
   "PASSWORD_TOO_SHORT_ERROR",
@@ -28,7 +31,7 @@ export class PasswordTooLongError extends BaseError<
 
   constructor({ cause }: { cause: AuthClientError<"PASSWORD_TOO_LONG"> }) {
     super({
-      message: PASSWORD_TOO_SHORT_ERROR_MESSAGE,
+      message: PASSWORD_TOO_LONG_ERROR_MESSAGE,
       cause,
     });
   }
