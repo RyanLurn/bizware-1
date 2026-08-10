@@ -5,6 +5,9 @@
   "scripts": {
     "build": "tsdown"
   },
+  "dependencies": {
+    "@repo/types": "workspace:*"
+  },
   "devDependencies": {
     "@repo/tsdown-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
