@@ -36,3 +36,11 @@ export class PasswordTooLongError extends BaseError<
     });
   }
 }
+
+export class InvalidPasswordError extends BaseError<
+  "INVALID_PASSWORD_ERROR",
+  AuthClientError<"INVALID_PASSWORD">
+> {
+  readonly name = "InvalidPasswordError";
+  readonly code = "INVALID_PASSWORD_ERROR";
+}
