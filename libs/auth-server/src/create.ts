@@ -2,7 +2,10 @@ import type { Db } from "@repo/db/create";
 import type { BetterAuthOptions } from "better-auth/minimal";
 
 import { drizzleAdapter } from "@better-auth/drizzle-adapter/relations-v2";
-import { MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH } from "@repo/auth-core";
+import {
+  MAX_PASSWORD_LENGTH,
+  MIN_PASSWORD_LENGTH,
+} from "@repo/auth-core/constants";
 import {
   accountTable,
   sessionTable,
@@ -21,9 +24,9 @@ export function createAuthServer({
   plugins,
 }: {
   db: Db;
-  baseURL: AuthServerEnv["BETTER_AUTH_URL"];
-  basePath: AuthServerEnv["BETTER_AUTH_PATH"];
-  secrets: AuthServerEnv["BETTER_AUTH_SECRETS"];
+  baseURL: AuthServerEnv["AUTH_BASE_URL"];
+  basePath: AuthServerEnv["AUTH_BASE_PATH"];
+  secrets: AuthServerEnv["AUTH_SECRETS"];
   plugins?: BetterAuthOptions["plugins"];
 }) {
   return betterAuth({
