@@ -15,7 +15,7 @@ export class UnexpectedError extends BaseError<"UNEXPECTED_ERROR"> {
     context?: Record<string, unknown>;
   }) {
     super({
-      message: `Failed to ${failedTo} because of an unexpected ${cause instanceof Error ? cause.name : "non-Error exception"}.`,
+      message: `Failed to ${failedTo} due to some unexpected error.`,
       cause,
     });
     this.context = context;
