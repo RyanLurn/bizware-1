@@ -27,7 +27,7 @@
   },
   "overrides": [
     {
-      "files": ["**/test/**", "**/*.test.ts"],
+      "files": ["**/test/**", "**/*.test.ts", "**/*.test-d.ts"],
       "plugins": ["vitest"],
       "rules": {
         "vitest/consistent-test-it": ["error", { "withinDescribe": "test" }]
