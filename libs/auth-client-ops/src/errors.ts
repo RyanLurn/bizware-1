@@ -44,3 +44,11 @@ export class InvalidPasswordError extends BaseError<
   readonly name = "InvalidPasswordError";
   readonly code = "INVALID_PASSWORD_ERROR";
 }
+
+export class InvalidEmailError extends BaseError<
+  "INVALID_EMAIL_ERROR",
+  AuthClientError<"INVALID_EMAIL">
+> {
+  readonly name = "InvalidEmailError";
+  readonly code = "INVALID_EMAIL_ERROR";
+}
