@@ -49,5 +49,3 @@ export function createAuthServer({
     },
   });
 }
-
-export type AuthServer = ReturnType<typeof createAuthServer>;
