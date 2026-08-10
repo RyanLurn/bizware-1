@@ -1,8 +1,11 @@
-import type { Options } from "serialize-error";
-
 import { serializeError } from "serialize-error";
 
-export function deepSerializeError(error: unknown, options: Options = {}) {
+import type { DeepSerializeErrorOptions } from "@/types";
+
+export function deepSerializeError(
+  error: unknown,
+  options: DeepSerializeErrorOptions = {},
+) {
   const { maxDepth = 50, useToJSON } = options;
   return serializeError(error, { maxDepth, useToJSON });
 }
