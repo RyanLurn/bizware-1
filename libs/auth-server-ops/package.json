@@ -1,0 +1,22 @@
+{
+  "name": "@repo/auth-server-ops",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@repo/auth-server": "workspace:*",
+    "@repo/error": "workspace:*",
+    "@repo/http-consts": "workspace:*",
+    "@repo/result": "workspace:*",
+    "@tanstack/react-start": "catalog:"
+  },
+  "devDependencies": {
+    "@repo/tsdown-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  }
+}
