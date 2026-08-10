@@ -11,7 +11,7 @@ export function createLibConfig({
   return {
     entry: [
       "src/**/*.{ts,tsx}",
-      "!src/**/*.{test,try}.{ts,tsx}",
+      "!src/**/*.{test,test-d,try}.{ts,tsx}",
       "!src/try.ts",
     ],
     dts: {
