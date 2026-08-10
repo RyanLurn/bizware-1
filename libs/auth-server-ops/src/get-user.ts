@@ -31,7 +31,7 @@ export async function getUser({
   } catch (error) {
     return err(
       new UnexpectedError({
-        failedTo: "get user information",
+        failedTo: "get your information",
         cause: error,
       }),
     );
