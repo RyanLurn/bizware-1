@@ -1,0 +1,19 @@
+{
+  "name": "@repo/auth-client-ops",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@repo/auth-client": "workspace:*",
+    "@repo/error": "workspace:*",
+    "@repo/result": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/tsdown-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  }
+}
