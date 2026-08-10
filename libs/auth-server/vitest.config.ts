@@ -4,4 +4,9 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
+  test: {
+    typecheck: {
+      enabled: true,
+    },
+  },
 });
