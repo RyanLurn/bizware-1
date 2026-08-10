@@ -2,6 +2,12 @@
   "name": "@repo/auth-client",
   "private": true,
   "type": "module",
+  "exports": {
+    "./create": "./dist/create.js",
+    "./env": "./dist/env.js",
+    "./types": "./dist/types.js",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsdown"
   },
