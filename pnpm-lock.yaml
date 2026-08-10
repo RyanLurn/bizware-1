@@ -446,6 +446,9 @@ importers:
       '@repo/auth-client':
         specifier: workspace:*
         version: link:../auth-client
+      '@repo/auth-core':
+        specifier: workspace:*
+        version: link:../auth-core
       '@repo/error':
         specifier: workspace:*
         version: link:../error
