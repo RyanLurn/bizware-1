@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./errors/unauthenticated": "./dist/errors/unauthenticated.mjs",
+    "./errors": "./dist/errors.mjs",
     "./get-user": "./dist/get-user.mjs",
     "./package.json": "./package.json"
   },
