@@ -1,3 +1,4 @@
+import type { AuthBasePath, AuthBaseUrl } from "@repo/auth-core/schemas";
 import type { Db } from "@repo/db/create";
 import type { BetterAuthOptions } from "better-auth/minimal";
 
@@ -14,7 +15,7 @@ import {
 import { userTable } from "@repo/db/schema/tables/user";
 import { betterAuth } from "better-auth/minimal";
 
-import type { AuthServerEnv } from "@/env";
+import type { AuthSecrets } from "@/env";
 
 export function createAuthServer({
   db,
@@ -24,9 +25,9 @@ export function createAuthServer({
   plugins,
 }: {
   db: Db;
-  baseURL: AuthServerEnv["AUTH_BASE_URL"];
-  basePath: AuthServerEnv["AUTH_BASE_PATH"];
-  secrets: AuthServerEnv["AUTH_SECRETS"];
+  baseURL: AuthBaseUrl;
+  basePath: AuthBasePath;
+  secrets: AuthSecrets;
   plugins?: BetterAuthOptions["plugins"];
 }) {
   return betterAuth({

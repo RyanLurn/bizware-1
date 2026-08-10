@@ -3,17 +3,20 @@ import { z } from "zod";
 
 import { CURRENT_AUTH_SECRET_VERSION } from "@/constants";
 
+export const AuthSecretsSchema = z
+  .templateLiteral([CURRENT_AUTH_SECRET_VERSION, ":", z.base64()])
+  .transform((secretsString) => [
+    {
+      version: CURRENT_AUTH_SECRET_VERSION,
+      value: secretsString.slice(2),
+    },
+  ]);
+export type AuthSecrets = z.infer<typeof AuthSecretsSchema>;
+
 export const AuthServerEnvSchema = z.object({
   AUTH_BASE_URL: AuthBaseUrlSchema,
   AUTH_BASE_PATH: AuthBasePathSchema,
-  AUTH_SECRETS: z
-    .templateLiteral([CURRENT_AUTH_SECRET_VERSION, ":", z.base64()])
-    .transform((secretsString) => [
-      {
-        version: CURRENT_AUTH_SECRET_VERSION,
-        value: secretsString.slice(2),
-      },
-    ]),
+  AUTH_SECRETS: AuthSecretsSchema,
 });
 
 export type AuthServerEnv = z.infer<typeof AuthServerEnvSchema>;
