@@ -4,7 +4,7 @@ import type { Result } from "@repo/result/types";
 import { UnexpectedError } from "@repo/error/classes/unexpected";
 import { err, ok } from "@repo/result/utils";
 
-import { UnauthenticatedError } from "@/errors/unauthenticated";
+import { UnauthenticatedError } from "@/errors";
 
 export async function getUser({
   authServer,
