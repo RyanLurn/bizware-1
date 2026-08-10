@@ -470,15 +470,9 @@ importers:
       '@repo/error':
         specifier: workspace:*
         version: link:../error
-      '@repo/http-consts':
-        specifier: workspace:*
-        version: link:../http-consts
       '@repo/result':
         specifier: workspace:*
         version: link:../result
-      '@tanstack/react-start':
-        specifier: 'catalog:'
-        version: 1.168.39(esbuild@0.28.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rolldown@1.2.3)(vite@8.2.1(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1))
     devDependencies:
       '@repo/tsdown-config':
         specifier: workspace:*
