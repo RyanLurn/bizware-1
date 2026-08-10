@@ -436,6 +436,10 @@ importers:
         version: 7.0.2
 
   libs/auth-core:
+    dependencies:
+      zod:
+        specifier: 'catalog:'
+        version: 4.4.3
     devDependencies:
       '@repo/tsdown-config':
         specifier: workspace:*
