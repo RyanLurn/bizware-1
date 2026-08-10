@@ -1,11 +1,11 @@
-import { BaseAuthPathSchema, BaseAuthUrlSchema } from "@repo/auth-core/schemas";
+import { AuthBaseUrlSchema, AuthBasePathSchema } from "@repo/auth-core/schemas";
 import { z } from "zod";
 
 import { CURRENT_AUTH_SECRET_VERSION } from "@/constants";
 
 export const AuthServerEnvSchema = z.object({
-  AUTH_BASE_URL: BaseAuthUrlSchema,
-  AUTH_BASE_PATH: BaseAuthPathSchema,
+  AUTH_BASE_URL: AuthBaseUrlSchema,
+  AUTH_BASE_PATH: AuthBasePathSchema,
   AUTH_SECRETS: z
     .templateLiteral([CURRENT_AUTH_SECRET_VERSION, ":", z.base64()])
     .transform((secretsString) => [
