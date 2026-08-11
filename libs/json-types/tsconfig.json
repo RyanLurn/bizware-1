@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/typescript-config/src/base.json",
+  "extends": "@repo/typescript-config/src/browser.json",
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
