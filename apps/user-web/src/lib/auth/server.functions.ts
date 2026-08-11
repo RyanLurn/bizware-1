@@ -12,8 +12,9 @@ export const getAuthBaseRouteServerFn = createServerFn()
     return { baseURL, basePath };
   });
 
-export const getUserServerFn = createServerFn()
+export const getAuthInfoServerFn = createServerFn()
   .middleware([authenticationMiddleware])
   .handler(({ context }) => {
-    return context.user;
+    const { baseURL, basePath, session, user } = context;
+    return { baseURL, basePath, session, user };
   });

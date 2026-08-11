@@ -1,10 +1,10 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
-import { getUserServerFn } from "@/lib/auth/server.functions";
+import { getAuthInfoServerFn } from "@/lib/auth/server.functions";
 
 export const Route = createFileRoute("/_authenticated")({
   beforeLoad: async () => {
-    return await getUserServerFn();
+    return await getAuthInfoServerFn();
   },
   component: AuthenticatedLayout,
 });
