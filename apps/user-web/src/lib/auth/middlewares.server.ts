@@ -29,5 +29,5 @@ export const authProviderMiddleware = createMiddleware()
   .server(({ next, context }) => {
     const { db, baseURL, basePath, secrets } = context;
     const auth = createAppAuthServer({ db, baseURL, basePath, secrets });
-    return next({ context: { db, auth } });
+    return next({ context: { auth } });
   });
