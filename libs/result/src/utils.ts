@@ -1,8 +1,9 @@
 import type { AppError } from "@repo/error/types";
+import type { JsonValue } from "@repo/json-types";
 
 import type { Err, Ok } from "@/types";
 
-export function ok<D>(data: D, metadata?: Record<string, unknown>): Ok<D> {
+export function ok<D>(data: D, metadata?: JsonValue): Ok<D> {
   return {
     ok: true,
     data,
@@ -12,7 +13,7 @@ export function ok<D>(data: D, metadata?: Record<string, unknown>): Ok<D> {
 
 export function err<E extends AppError<string>>(
   error: E,
-  metadata?: Record<string, unknown>,
+  metadata?: JsonValue,
 ): Err<E> {
   return {
     ok: false,

@@ -11,7 +11,8 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "@repo/error": "workspace:*"
+    "@repo/error": "workspace:*",
+    "@repo/json-types": "workspace:*"
   },
   "devDependencies": {
     "@repo/tsdown-config": "workspace:*",

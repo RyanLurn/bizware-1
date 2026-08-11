@@ -728,6 +728,9 @@ importers:
       '@repo/error':
         specifier: workspace:*
         version: link:../error
+      '@repo/json-types':
+        specifier: workspace:*
+        version: link:../json-types
     devDependencies:
       '@repo/tsdown-config':
         specifier: workspace:*
