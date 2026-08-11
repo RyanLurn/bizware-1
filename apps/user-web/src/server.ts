@@ -1,3 +1,8 @@
+import type { AppAuthServer } from "@repo/auth-server/types";
+import type { Db } from "@repo/db/create";
+
+import { createAppAuthServer } from "@repo/auth-server/create";
+import { createDb } from "@repo/db/create";
 import { HTTP_SERVER_ERROR_RESPONSE_STATUS_RECORD } from "@repo/http-consts/response-statuses";
 import handler, { createServerEntry } from "@tanstack/react-start/server-entry";
 import { prettifyError } from "zod";
@@ -8,6 +13,8 @@ import { ServerEnvSchema } from "@/config/env";
 
 type AppRequestContext = {
   env: ServerEnv;
+  db: Db;
+  auth: AppAuthServer;
 };
 
 declare module "@tanstack/react-router" {
@@ -32,6 +39,15 @@ export default createServerEntry({
     }
     const env = parseEnvResult.data;
 
-    return handler.fetch(request, { context: { env } });
+    const db = createDb(env.NEON_POOLED_CONNECTION_STRING);
+
+    const auth = createAppAuthServer({
+      db,
+      baseURL: env.AUTH_BASE_URL,
+      basePath: env.AUTH_BASE_PATH,
+      secrets: env.AUTH_SECRETS,
+    });
+
+    return handler.fetch(request, { context: { env, db, auth } });
   },
 });
