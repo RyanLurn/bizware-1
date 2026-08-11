@@ -308,6 +308,9 @@ importers:
       '@repo/env':
         specifier: workspace:*
         version: link:../../libs/env
+      '@repo/http-consts':
+        specifier: workspace:*
+        version: link:../../libs/http-consts
       '@repo/ui':
         specifier: workspace:*
         version: link:../../libs/ui
@@ -329,6 +332,9 @@ importers:
       tailwindcss:
         specifier: 'catalog:'
         version: 4.3.3
+      zod:
+        specifier: 'catalog:'
+        version: 4.4.3
     devDependencies:
       '@repo/typescript-config':
         specifier: workspace:*
