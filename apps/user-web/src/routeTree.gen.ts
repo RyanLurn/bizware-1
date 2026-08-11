@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from "./routes/__root";
 import { Route as IndexRouteImport } from "./routes/index";
 import { Route as R500IndexRouteImport } from "./routes/500/index";
 import { Route as authSignInIndexRouteImport } from "./routes/(auth)/sign-in/index";
+import { Route as AuthenticatedAccountIndexRouteImport } from "./routes/_authenticated/account/index";
 import { Route as ApiAuthSplatRouteImport } from "./routes/api/auth/$";
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,12 @@ const authSignInIndexRoute = authSignInIndexRouteImport.update({
   path: "/sign-in/",
   getParentRoute: () => rootRouteImport,
 } as any);
+const AuthenticatedAccountIndexRoute =
+  AuthenticatedAccountIndexRouteImport.update({
+    id: "/_authenticated/account/",
+    path: "/account/",
+    getParentRoute: () => rootRouteImport,
+  } as any);
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: "/api/auth/$",
   path: "/api/auth/$",
@@ -40,12 +47,14 @@ export interface FileRoutesByFullPath {
   "/500/": typeof R500IndexRoute;
   "/api/auth/$": typeof ApiAuthSplatRoute;
   "/sign-in/": typeof authSignInIndexRoute;
+  "/account/": typeof AuthenticatedAccountIndexRoute;
 }
 export interface FileRoutesByTo {
   "/": typeof IndexRoute;
   "/500": typeof R500IndexRoute;
   "/api/auth/$": typeof ApiAuthSplatRoute;
   "/sign-in": typeof authSignInIndexRoute;
+  "/account": typeof AuthenticatedAccountIndexRoute;
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport;
@@ -53,13 +62,20 @@ export interface FileRoutesById {
   "/500/": typeof R500IndexRoute;
   "/api/auth/$": typeof ApiAuthSplatRoute;
   "/(auth)/sign-in/": typeof authSignInIndexRoute;
+  "/_authenticated/account/": typeof AuthenticatedAccountIndexRoute;
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: "/" | "/500/" | "/api/auth/$" | "/sign-in/";
+  fullPaths: "/" | "/500/" | "/api/auth/$" | "/sign-in/" | "/account/";
   fileRoutesByTo: FileRoutesByTo;
-  to: "/" | "/500" | "/api/auth/$" | "/sign-in";
-  id: "__root__" | "/" | "/500/" | "/api/auth/$" | "/(auth)/sign-in/";
+  to: "/" | "/500" | "/api/auth/$" | "/sign-in" | "/account";
+  id:
+    | "__root__"
+    | "/"
+    | "/500/"
+    | "/api/auth/$"
+    | "/(auth)/sign-in/"
+    | "/_authenticated/account/";
   fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
@@ -67,6 +83,7 @@ export interface RootRouteChildren {
   R500IndexRoute: typeof R500IndexRoute;
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute;
   authSignInIndexRoute: typeof authSignInIndexRoute;
+  AuthenticatedAccountIndexRoute: typeof AuthenticatedAccountIndexRoute;
 }
 
 declare module "@tanstack/react-router" {
@@ -92,6 +109,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof authSignInIndexRouteImport;
       parentRoute: typeof rootRouteImport;
     };
+    "/_authenticated/account/": {
+      id: "/_authenticated/account/";
+      path: "/account";
+      fullPath: "/account/";
+      preLoaderRoute: typeof AuthenticatedAccountIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/api/auth/$": {
       id: "/api/auth/$";
       path: "/api/auth/$";
@@ -107,6 +131,7 @@ const rootRouteChildren: RootRouteChildren = {
   R500IndexRoute: R500IndexRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   authSignInIndexRoute: authSignInIndexRoute,
+  AuthenticatedAccountIndexRoute: AuthenticatedAccountIndexRoute,
 };
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
