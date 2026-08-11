@@ -1,7 +1,10 @@
+import { createAppAuthServer } from "@repo/auth-server/create";
 import { AuthServerEnvSchema } from "@repo/auth-server/env";
 import { redirect } from "@tanstack/react-router";
 import { createMiddleware } from "@tanstack/react-start";
 import { prettifyError } from "zod";
+
+import { dbProviderMiddleware } from "@/lib/db.server";
 
 export const authEnvProviderMiddleware = createMiddleware().server(
   ({ next }) => {
@@ -20,3 +23,11 @@ export const authEnvProviderMiddleware = createMiddleware().server(
     });
   },
 );
+
+export const authProviderMiddleware = createMiddleware()
+  .middleware([dbProviderMiddleware, authEnvProviderMiddleware])
+  .server(({ next, context }) => {
+    const { db, baseURL, basePath, secrets } = context;
+    const auth = createAppAuthServer({ db, baseURL, basePath, secrets });
+    return next({ context: { db, auth } });
+  });
