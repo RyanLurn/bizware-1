@@ -31,3 +31,16 @@ export const authProviderMiddleware = createMiddleware()
     const auth = createAppAuthServer({ db, baseURL, basePath, secrets });
     return next({ context: { auth } });
   });
+
+export const authenticationMiddleware = createMiddleware()
+  .middleware([authProviderMiddleware])
+  .server(async ({ next, context, request }) => {
+    const getSessionResult = await context.auth.api.getSession({
+      headers: request.headers,
+    });
+    if (getSessionResult === null) {
+      throw redirect({ to: "/sign-in" });
+    }
+    const { session, user } = getSessionResult;
+    return next({ context: { session, user } });
+  });
