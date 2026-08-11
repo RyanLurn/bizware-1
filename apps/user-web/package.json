@@ -7,6 +7,7 @@
     "dev:app": "vite dev"
   },
   "dependencies": {
+    "@repo/auth-server": "workspace:*",
     "@repo/db": "workspace:*",
     "@repo/env": "workspace:*",
     "@repo/ui": "workspace:*",

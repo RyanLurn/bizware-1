@@ -299,6 +299,9 @@ importers:
 
   apps/user-web:
     dependencies:
+      '@repo/auth-server':
+        specifier: workspace:*
+        version: link:../../libs/auth-server
       '@repo/db':
         specifier: workspace:*
         version: link:../../libs/db
