@@ -3,7 +3,7 @@ import { createServerFn } from "@tanstack/react-start";
 import {
   authenticationMiddleware,
   authEnvProviderMiddleware,
-} from "@/lib/auth/middlewares.server";
+} from "@/lib/auth/middlewares";
 
 export const getAuthBaseRouteServerFn = createServerFn()
   .middleware([authEnvProviderMiddleware])
