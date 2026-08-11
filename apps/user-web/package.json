@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "portless",
-    "dev:app": "vite dev"
+    "dev": "vite dev",
+    "start": "portless"
   },
   "dependencies": {
     "@repo/auth-server": "workspace:*",
@@ -35,6 +35,6 @@
   },
   "portless": {
     "name": "app.bizware",
-    "script": "dev:app"
+    "script": "start"
   }
 }
