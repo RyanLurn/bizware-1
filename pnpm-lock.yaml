@@ -308,9 +308,15 @@ importers:
       '@repo/env':
         specifier: workspace:*
         version: link:../../libs/env
+      '@repo/error':
+        specifier: workspace:*
+        version: link:../../libs/error
       '@repo/http-consts':
         specifier: workspace:*
         version: link:../../libs/http-consts
+      '@repo/result':
+        specifier: workspace:*
+        version: link:../../libs/result
       '@repo/ui':
         specifier: workspace:*
         version: link:../../libs/ui
