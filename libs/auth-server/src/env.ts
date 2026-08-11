@@ -4,7 +4,7 @@ import { z } from "zod";
 import { CURRENT_AUTH_SECRET_VERSION } from "@/constants";
 
 export const AuthSecretsSchema = z
-  .templateLiteral([CURRENT_AUTH_SECRET_VERSION, ":", z.base64()])
+  .templateLiteral([CURRENT_AUTH_SECRET_VERSION, ":", z.string().min(32)])
   .transform((secretsString) => [
     {
       version: CURRENT_AUTH_SECRET_VERSION,

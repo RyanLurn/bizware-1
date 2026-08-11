@@ -2,6 +2,12 @@
   "name": "@repo/auth-client-ops",
   "private": true,
   "type": "module",
+  "exports": {
+    "./constants": "./dist/constants.js",
+    "./errors": "./dist/errors.js",
+    "./sign-up": "./dist/sign-up.js",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsdown"
   },
