@@ -308,6 +308,9 @@ importers:
       '@repo/db':
         specifier: workspace:*
         version: link:../../libs/db
+      '@repo/db-tanstack-start':
+        specifier: workspace:*
+        version: link:../../db-libs/tanstack-start
       '@repo/env':
         specifier: workspace:*
         version: link:../../libs/env

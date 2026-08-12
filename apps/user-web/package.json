@@ -9,6 +9,7 @@
   "dependencies": {
     "@repo/auth-server": "workspace:*",
     "@repo/db": "workspace:*",
+    "@repo/db-tanstack-start": "workspace:*",
     "@repo/env": "workspace:*",
     "@repo/error": "workspace:*",
     "@repo/http-consts": "workspace:*",
