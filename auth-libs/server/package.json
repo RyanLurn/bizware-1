@@ -6,7 +6,6 @@
     "./constants": "./dist/constants.mjs",
     "./create": "./dist/create.mjs",
     "./env": "./dist/env.mjs",
-    "./types": "./dist/types.mjs",
     "./package.json": "./package.json"
   },
   "scripts": {
