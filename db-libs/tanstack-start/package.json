@@ -10,11 +10,9 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "@neondatabase/serverless": "catalog:",
     "@repo/db-driver": "workspace:*",
     "@tanstack/react-router": "catalog:",
-    "@tanstack/react-start": "catalog:",
-    "drizzle-orm": "catalog:"
+    "@tanstack/react-start": "catalog:"
   },
   "devDependencies": {
     "@repo/tsdown-config": "workspace:*",
@@ -22,5 +20,9 @@
     "@types/node": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "@neondatabase/serverless": "catalog:",
+    "drizzle-orm": "catalog:"
   }
 }
