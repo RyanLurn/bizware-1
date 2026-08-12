@@ -2,6 +2,11 @@
   "name": "@repo/db-helpers",
   "private": true,
   "type": "module",
+  "exports": {
+    "./id": "./dist/id.mjs",
+    "./timestamps": "./dist/timestamps.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsdown"
   },
