@@ -1,5 +1,5 @@
 {
-  "name": "@repo/auth-tanstack-start",
+  "name": "@repo/db-tanstack-start",
   "private": true,
   "type": "module",
   "scripts": {
