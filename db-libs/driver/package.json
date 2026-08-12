@@ -11,7 +11,7 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "@neondatabase/serverless": "1.1.0",
+    "@neondatabase/serverless": "catalog:",
     "@repo/db-relations": "workspace:*",
     "drizzle-orm": "catalog:",
     "zod": "catalog:"

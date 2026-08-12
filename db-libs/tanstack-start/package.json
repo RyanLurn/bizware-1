@@ -2,13 +2,19 @@
   "name": "@repo/db-tanstack-start",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsdown"
   },
   "dependencies": {
+    "@neondatabase/serverless": "catalog:",
     "@repo/db-driver": "workspace:*",
     "@tanstack/react-router": "catalog:",
-    "@tanstack/react-start": "catalog:"
+    "@tanstack/react-start": "catalog:",
+    "drizzle-orm": "catalog:"
   },
   "devDependencies": {
     "@repo/tsdown-config": "workspace:*",

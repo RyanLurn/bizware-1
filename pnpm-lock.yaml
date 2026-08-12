@@ -208,6 +208,9 @@ catalogs:
     '@better-auth/drizzle-adapter':
       specifier: 1.7.0-rc.3
       version: 1.7.0-rc.3
+    '@neondatabase/serverless':
+      specifier: 1.1.0
+      version: 1.1.0
     '@rolldown/plugin-babel':
       specifier: 0.2.3
       version: 0.2.3
@@ -527,7 +530,7 @@ importers:
   db-libs/driver:
     dependencies:
       '@neondatabase/serverless':
-        specifier: 1.1.0
+        specifier: 'catalog:'
         version: 1.1.0
       '@repo/db-relations':
         specifier: workspace:*
@@ -632,6 +635,9 @@ importers:
 
   db-libs/tanstack-start:
     dependencies:
+      '@neondatabase/serverless':
+        specifier: 'catalog:'
+        version: 1.1.0
       '@repo/db-driver':
         specifier: workspace:*
         version: link:../driver
@@ -641,6 +647,9 @@ importers:
       '@tanstack/react-start':
         specifier: 'catalog:'
         version: 1.168.39(esbuild@0.28.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(rolldown@1.2.3)(vite@8.2.1(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.23.1))
+      drizzle-orm:
+        specifier: 'catalog:'
+        version: 1.0.0-rc.4(@neondatabase/serverless@1.1.0)(zod@4.4.3)
     devDependencies:
       '@repo/tsdown-config':
         specifier: workspace:*
