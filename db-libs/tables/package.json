@@ -2,6 +2,11 @@
   "name": "@repo/db-tables",
   "private": true,
   "type": "module",
+  "exports": {
+    "./auth": "./dist/auth.mjs",
+    "./user": "./dist/user.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsdown",
     "check": "drizzle-kit check",
