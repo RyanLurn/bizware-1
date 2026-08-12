@@ -1,0 +1,19 @@
+{
+  "name": "@repo/db-tables",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@repo/db-helpers": "workspace:*",
+    "drizzle-orm": "catalog:"
+  },
+  "devDependencies": {
+    "@repo/tsdown-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  }
+}
