@@ -46,3 +46,39 @@ export function authProviderMiddleware({
       return next({ context: { auth } });
     });
 }
+
+export function authSessionProviderMiddleware({
+  baseURL,
+  basePath,
+  onInternalErrorRedirectOptions,
+  onUnauthenticatedErrorRedirectOptions,
+}: {
+  baseURL: AuthBaseUrl;
+  basePath: AuthBasePath;
+  onInternalErrorRedirectOptions: ValidateRedirectOptions;
+  onUnauthenticatedErrorRedirectOptions: ValidateRedirectOptions;
+}) {
+  return createMiddleware()
+    .middleware([
+      authProviderMiddleware({
+        baseURL,
+        basePath,
+        onErrorRedirectOptions: onInternalErrorRedirectOptions,
+      }),
+    ])
+    .server(async ({ next, context, request }) => {
+      try {
+        const getSessionResult = await context.auth.api.getSession({
+          headers: request.headers,
+        });
+        if (getSessionResult === null) {
+          throw redirect(onUnauthenticatedErrorRedirectOptions);
+        }
+        const { session, user } = getSessionResult;
+        return next({ context: { session, user } });
+      } catch (error) {
+        console.error(error);
+        throw redirect(onInternalErrorRedirectOptions);
+      }
+    });
+}
