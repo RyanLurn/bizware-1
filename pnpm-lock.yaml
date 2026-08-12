@@ -564,6 +564,9 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 26.1.2
+      drizzle-kit:
+        specifier: 1.0.0-rc.4
+        version: 1.0.0-rc.4
       tsdown:
         specifier: 'catalog:'
         version: 0.22.14(tsx@4.23.1)(typescript@7.0.2)
