@@ -1,0 +1,16 @@
+import { id } from "@repo/db-helpers/id";
+import { timestamps } from "@repo/db-helpers/timestamps";
+import { boolean, pgTable, text, uuid } from "drizzle-orm/pg-core";
+
+export const userTable = pgTable("users", {
+  id,
+  name: text("name").notNull(),
+  email: text("email").notNull().unique(),
+  emailVerified: boolean("email_verified").default(false).notNull(),
+  image: text("image"),
+  ...timestamps,
+});
+
+export const userId = uuid("user_id")
+  .notNull()
+  .references(() => userTable.id, { onDelete: "cascade" });
