@@ -2,6 +2,11 @@
   "name": "@repo/db-driver",
   "private": true,
   "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./env": "./dist/env.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsdown"
   },
