@@ -11,12 +11,14 @@
     "build": "tsdown"
   },
   "dependencies": {
+    "@neondatabase/serverless": "catalog:",
     "@repo/auth-core": "workspace:*",
     "@repo/auth-server": "workspace:*",
     "@repo/db-tanstack-start": "workspace:*",
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-start": "catalog:",
     "better-auth": "catalog:",
+    "drizzle-orm": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
@@ -25,9 +27,5 @@
     "@types/node": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "@neondatabase/serverless": "catalog:",
-    "drizzle-orm": "catalog:"
   }
 }
