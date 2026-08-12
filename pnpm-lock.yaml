@@ -440,6 +440,9 @@ importers:
       '@repo/auth-server':
         specifier: workspace:*
         version: link:../server
+      '@repo/db-tanstack-start':
+        specifier: workspace:*
+        version: link:../../db-libs/tanstack-start
       '@tanstack/react-router':
         specifier: 'catalog:'
         version: 1.170.22(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
