@@ -1,0 +1,20 @@
+{
+  "name": "@repo/auth-tanstack-start",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@repo/db-driver": "workspace:*",
+    "@tanstack/react-router": "catalog:",
+    "@tanstack/react-start": "catalog:"
+  },
+  "devDependencies": {
+    "@repo/tsdown-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  }
+}
